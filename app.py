@@ -21,7 +21,7 @@ def create_spotify_oauth():
     return SpotifyOAuth(
          client_id= SPOTIPY_CLIENT_ID,
          client_secret= SPOTIPY_CLIENT_SECRET,
-         redirect_uri='http://127.0.0.1:5000/toptracks',
+         redirect_uri='https://bowies-canvas-a86775402ce2.herokuapp.com/toptracks',
          scope= 'user-top-read',
          cache_handler=cache_handler,
          show_dialog=True
