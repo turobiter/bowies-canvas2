@@ -1,0 +1,63 @@
+body {
+
+    background-color: rgb(26, 26, 26);
+}
+
+#site-title{
+    position: relative;
+}
+h2{
+
+    color: black;
+    font-family: 'Libre Barcode 39 Extended Text' , sans-serif;
+}
+
+h1{
+
+    color: rgba(255, 255, 255, 0.788);
+    font-family: 'Russo One', Arial, Helvetica, sans-serif;
+    font-size: 250px;
+}
+
+#sign-in-button{
+
+    background-color: #00ff15b9;
+    color: #dcffe8;
+    font-size: 30px;
+    padding: 15px;
+    position: relative; 
+     left: 80%;
+     top: -500px;
+}
+
+h4{
+    color: blue;
+    font-family: 'Russo One', Arial, Helvetica, sans-serif;
+    font-size: 100px;
+
+}
+
+h5 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 100;
+}
+
+ol {
+    background-color:rgba(26, 26, 26, 0.714) ;
+    color: whitesmoke;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+  }
+
+a:visited{
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.788)
+
+}
+
+a:link{
+    text-decoration: underline;
+    color: rgb(137, 137, 255);
+
+}

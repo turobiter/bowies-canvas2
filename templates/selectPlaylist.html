@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist List</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename= 'css/main.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2> A TS Project </h2>
+    <h4>Select The Playlist You Would Like To Generate An Image For</h4>
+    <h5> after selecting playlist, you can refresh the page to create a new image. an internal server error? hit refresh!</h5>
+        <ol>
+            {% for item in playName %}
+            <li><a href="http://127.0.0.1:5000/playlist/{{item[1]}}">{{item[0]}}</a></li>
+            {% endfor %}
+        </ol>
+
+</body>
+</html>
