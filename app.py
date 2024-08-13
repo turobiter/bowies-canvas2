@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for, session, redirect
+from flask_cors import CORS
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.cache_handler import FlaskSessionCacheHandler
@@ -11,6 +12,7 @@ from settings import appKey, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
 
 
 app= Flask(__name__, template_folder='templates')
+CORS(app)
 app.secret_key= appKey
 app.config['SESSION_COOKIE_NAME']= 'Tanyas Cookie'
 TOKEN_INFO= 'token_info'
