@@ -49,11 +49,17 @@ def get_token():
     token_info = session.get(TOKEN_INFO)
     if not token_info:
         raise Exception('No token found')
+    
     now = int(time.time())
     if token_info['expires_at'] - now < 60:
-        sp_oauth = create_spotify_oauth()
-        token_info = sp_oauth.refresh_access_token(token_info['refresh_token'])
-        session[TOKEN_INFO] = token_info
+        try:
+            sp_oauth = create_spotify_oauth()
+            token_info = sp_oauth.refresh_access_token(token_info['refresh_token'])
+            session[TOKEN_INFO] = token_info
+        except Exception as e:
+            app.logger.error('Token refresh failed: %s', e)
+            raise Exception('Token refresh failed')
+    
     return token_info
 
 @app.route('/selectplaylist')
