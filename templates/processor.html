@@ -9,10 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
 </head>
 <body>
-    <a href= "https://bowies-canvas-a86775402ce2.herokuapp.com/playlist/{{playlist_id}}/upload> 
-        <button id="upload-image-button" style="border-radius: 15px;">Use as Cover Image</button>
-    </a>
-
+    
     <script>
         let mapped;
         let particles;
@@ -33,12 +30,6 @@
         background(0);
         noStroke();
         ellipseMode(RADIUS);
-        document.getElementById('upload-image-button').addEventListener('click', function() {
-                // Capture the canvas image as Base64
-                let imgData = canvas.toDataURL('image/jpeg');
-                // Send image data to server
-                uploadImage(imgData);
-            });
         }
 
         function draw() {
@@ -67,25 +58,8 @@
             }
         }
 
-        function uploadImage(imgData) {
-            fetch(`/playlist/${playlistId}/upload`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ image_data: imgData })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                alert('Image uploaded successfully!');
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Failed to upload image.');
-            });
-        }}
-
+       
+        }    
 
     </script>
 </body>

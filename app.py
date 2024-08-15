@@ -110,21 +110,9 @@ def playlist(playlist_id):
         json.dump(particleArray, f)
     with open("static/colors.json") as f:
         data = json.load(f)
-    return render_template('processor.html', dim= beats, ang= totalTracks, live=live, key=key, playlist_id= playlist_id)
+    return render_template('processor.html', dim= beats, ang= totalTracks, live=live, key=key)
 
 
-@app.route('/playlist/<string:playlist_id>/upload', methods= ['POST'])
-def upload_image(playlist_id):
-    try:
-        token_info= get_token()
-    except Exception as e:
-        print('try logging in again',e)
-        return redirect('/')
-    sp= spotipy.Spotify(auth=token_info['access_token'])
-    user= sp.current_user()['id']
-    data= request.get_json()
-    image_data= data['image_data']
-    return sp.playlist_upload_cover_image(playlist_id,image_data)
 
 
 
