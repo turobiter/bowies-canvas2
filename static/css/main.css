@@ -61,3 +61,14 @@ a:link{
     color: rgb(137, 137, 255);
 
 }
+
+#upload-image-button{
+
+    background-color: #3700ffb9;
+    color: #dcffe8;
+    font-size: 30px;
+    padding: 15px;
+    position: relative; 
+     left: 80%;
+     top: -500px;
+}

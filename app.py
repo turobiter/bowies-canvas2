@@ -110,7 +110,11 @@ def playlist(playlist_id):
         json.dump(particleArray, f)
     with open("static/colors.json") as f:
         data = json.load(f)
-    return render_template('processor.html', dim= beats, ang= totalTracks, live=live, key=key)
+    return render_template('processor.html', dim= beats, ang= totalTracks, live=live, key=key, playlist_id= playlist_id)
+
+
+    
+
 
 
 
